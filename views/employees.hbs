@@ -1,0 +1,45 @@
+<div class="container">  
+    <div class="row">
+        <h2>Empolyee information</h2>
+        <div class="col-md-2"></div>
+        <div class="col-md-8"></div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Employee number</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">Hire Date</th>
+{{!-- 
+    emp_no      INT             NOT NULL,
+    birth_date  DATE            NOT NULL,
+    first_name  VARCHAR(14)     NOT NULL,
+    last_name   VARCHAR(16)     NOT NULL,
+    gender      ENUM ('M','F')  NOT NULL,    
+    hire_date   DATE            NOT NULL, --}}
+    </tr>
+  </thead>
+  <tbody>
+      {{#each employees}}
+    <tr>
+      <th scope="row">{{this.emp_no}}</th>
+      <td>{{this.first_name}}</td>
+      <td>{{this.last_name}}</td>
+      <td>{{this.gender}}</td>
+      <td>{{this.birth_date}}</td>
+      <td>{{this.hire_date}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+    </div>
+</div>
