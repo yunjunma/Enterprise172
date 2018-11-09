@@ -17,8 +17,9 @@
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Gender</th>
+      <th scope="col">Birthday</th>
       <th scope="col">Hire Date</th>
-          {{!-- emp_no      INT             NOT NULL,
+{{!-- emp_no      INT             NOT NULL,
     birth_date  DATE            NOT NULL,
     first_name  VARCHAR(14)     NOT NULL,
     last_name   VARCHAR(16)     NOT NULL,
@@ -27,23 +28,16 @@
     </tr>
   </thead>
   <tbody>
+      {{#each employees}}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{this.emp_no}}</th>
+      <td>{{this.first_name}}</td>
+      <td>{{this.last_name}}</td>
+      <td>{{this.gender}}</td>
+      <td>{{this.birth_date}}</td>
+      <td>{{this.hire_date}}</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    {{/each}}
   </tbody>
 </table>
     </div>

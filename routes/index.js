@@ -1,25 +1,25 @@
 var express = require('express');
 var router = express.Router();
-var mysql = require('mysql');
-
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'password',
-  database : 'employee'
-});
-
-connection.connect();
+var connection = require('../config/connection')
  
-connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results[0].solution);
-});
- 
-connection.end();
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+
+  connection.query('SELECT * FROM employees limit 100', function (err, rows){
+    if (err) throw err;
+    res.render('index', { title: 'Express', employees:rows });
+
+  })
+
+  // tables in employees
+// | current_dept_emp     |
+// | departments          |
+// | dept_emp             |
+// | dept_emp_latest_date |
+// | dept_manager         |
+// | employees            |
+// | salaries             |
+// | titles 
 });
 
 module.exports = router;
