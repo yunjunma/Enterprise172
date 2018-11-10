@@ -8,7 +8,9 @@ var expressHbs = require('express-handlebars');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var departmentsRouter = require('./routes/departments');
-var employeesRouter = require('./routes/employees')
+var employeesRouter = require('./routes/employees');
+var employeesRouter = require('./routes/employees');
+var dashboardRouter = require('./routes/dashboard');
 
 var app = express();
 
@@ -27,6 +29,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/departments', departmentsRouter);
 app.use('/employees', employeesRouter);
+app.use('/dashboard', dashboardRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
