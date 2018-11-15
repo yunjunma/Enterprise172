@@ -4,14 +4,14 @@ Application queries data from MySQL.
 Employees data are from https://github.com/datacharmer/test_db.
 
 Tables in employees database:
-| current_dept_emp     |
-| departments          |
-| dept_emp             |
-| dept_emp_latest_date |
-| dept_manager         |
-| employees            |
-| salaries             |
-| titles               |
+current_dept_emp     |
+departments          |
+dept_emp             |
+dept_emp_latest_date |
+dept_manager         |
+employees            |
+salaries             |
+titles               |
 
 Employees table:
     emp_no      INT             NOT NULL,
@@ -24,5 +24,3 @@ Employees table:
 Departments table:
   dept_no
   dept_name  
-  
-//Testing for jenkins
