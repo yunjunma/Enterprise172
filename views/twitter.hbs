@@ -1,0 +1,31 @@
+<h1>Twitter</h1>
+
+<div>
+    <h2>Search</h2>
+    <form action="/twitter/searchResult" method="POST">
+        <label>Search User:</label><br />
+        <input type="text" name="username" /><br />
+        <input type="submit" name="submit" value="Search" />
+
+    </form>
+</div>
+
+<div>
+    <h2>Twitter Trends</h2>
+    <p>
+        You probably want to follow these trends on Twitter...:
+    </p>
+    {{!-- display twitter trends --}}
+    {{#each trending}}
+    <a href="{{this.url}}">
+        {{this.name}}
+    </a>
+    <br />
+    {{/each}}
+</div>
+
+<div>
+    {{!-- display twitter timeline --}}
+    <a class="twitter-timeline" href="https://twitter.com/riCHEardTW?ref_src=twsrc%5Etfw">Tweets by riCHEardTW</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>

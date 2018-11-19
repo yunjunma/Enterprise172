@@ -1,0 +1,15 @@
+<a href="https://twitter.com/{{twitterUser.screen_name}}">
+    <img src="{{twitterUser.profile_image_url}}" style="border-radius: 100%">
+</a>
+
+{{!-- If the searched user does not exists... --}}
+{{#if twitterUser.errors}}
+    <p>User not found.</p>
+
+{{!-- if the user exists, show basic info --}}
+{{else}}
+    <p><b>Name:</b> {{twitterUser.name}}</p>
+    <p><b>Username:</b> @{{twitterUser.screen_name}}</p>
+    <p><b>Location:</b> {{twitterUser.location}}</p>
+    <p><b>User Page:</b> <a href="https://twitter.com/{{twitterUser.screen_name}}">User Page</a></p>
+{{/if}}
