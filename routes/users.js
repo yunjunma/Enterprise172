@@ -9,7 +9,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
-  console.log(req.user)
+  // console.log(req.user)
 
   res.render('users', {
     title: 'Users',
@@ -26,8 +26,8 @@ router.get('/profile', function(req, res, next) {
     }
   },function(err, respose, body){
 
-    console.log('User Info')
-    console.log(body);
+    // console.log('User Info')
+    // console.log(body);
 
     res.render('profile', {
       title: 'Profile',

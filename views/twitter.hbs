@@ -1,5 +1,6 @@
 <h1>Twitter</h1>
 
+{{!-- Search function --}}
 <div>
     <h2>Search</h2>
     <form action="/twitter/searchResult" method="POST">
@@ -10,6 +11,7 @@
     </form>
 </div>
 
+{{!-- Show list of trends --}}
 <div>
     <h2>Twitter Trends</h2>
     <p>
@@ -24,8 +26,19 @@
     {{/each}}
 </div>
 
+<br /><br />
+
 <div>
+    <div>
+        <a href="https://twitter.com/PrtyEnterprise?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow
+            @PrtyEnterprise</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+
     {{!-- display twitter timeline --}}
-    <a class="twitter-timeline" href="https://twitter.com/riCHEardTW?ref_src=twsrc%5Etfw">Tweets by riCHEardTW</a>
+    {{!-- Show timeline with given user --}}
+    <a class="twitter-timeline" data-width="500" href="https://twitter.com/PrtyEnterprise?ref_src=twsrc%5Etfw">Tweets
+        by PrtyEnterprise</a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>

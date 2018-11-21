@@ -22,17 +22,21 @@
             </ul>
             {{/if}}
             <ul class="nav navbar-nav navbar-right">
-                {{!-- if the user logs in, the user has two options: profile and logout --}}
+                {{!-- if the user logs in, the user has options: profile, onelogin, and logout --}}
                 {{#if user.authenticated}}
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i> Account <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="/users/profile">Profile </a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="/logout">Logout</a></li>
-                        </ul>
-                    </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                        aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>
+                        {{!-- show user's name once they login --}}
+                        {{user.loginUser.displayName}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/users/profile">Profile </a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="https:prty.onelogin.com" target="_blank">OneLogin </a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </li>
                 {{!-- if the user does not login, the only option the user will have is to login --}}
                 {{else}}
                 <li><a href="/login">Login</a></li>
