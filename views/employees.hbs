@@ -1,9 +1,14 @@
 <div class="container">  
     <div class="row">
         <h2>Empolyee information</h2>
-        <div class="col-md-2"></div>
-        <div class="col-md-8"></div>
-
+        <form action="/employees" method="post">
+            <div class="form-group">
+                First Name: <input type="text" name="s_firstname" value="{{s_firstname}}"><br>
+                Last Name: <input type="text" name="s_lastname" value="{{s_lastname}}"><br>
+                <input type="submit" value="search">
+            </div>
+        </form>
+        (For instance: Sachin Peot) 
     </div>
 </div>
 
@@ -16,7 +21,7 @@
       <th scope="col">Employee number</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
-      <th scope="col">Gender</th>
+      <th scope="col">Title</th>
       <th scope="col">Birthday</th>
       <th scope="col">Hire Date</th>
 {{!-- 
@@ -34,7 +39,7 @@
       <th scope="row">{{this.emp_no}}</th>
       <td>{{this.first_name}}</td>
       <td>{{this.last_name}}</td>
-      <td>{{this.gender}}</td>
+      <td>{{this.title}}</td>
       <td>{{this.birth_date}}</td>
       <td>{{this.hire_date}}</td>
     </tr>

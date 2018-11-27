@@ -3,6 +3,7 @@ var router = express.Router();
 var connection = require("../config/connection");
 var Twitter = require("twitter");
 
+// connect to twitter
 var client = new Twitter({
   consumer_key: "s3vvKcx6DwySzyFQ27jYdLMEA",
   consumer_secret: "oxo2Y9BMpXSIkPIlQ3s8SpwhrDnIaIWOhQXM0DzwVMV0Zkq5dF",
@@ -55,6 +56,8 @@ router.get("/", function(req, res, next) {
 
 router.post("/searchResult", function(req, res){
   let username = req.body.username;
+
+  // to prevent users forgot to search username without "@"
   if(!username.includes("@"))
   {
     username = "@" + req.body.username;
@@ -66,7 +69,7 @@ router.post("/searchResult", function(req, res){
     profile,
     response
   ) {
-    console.log(profile);
+    // console.log(profile);
     res.render("twitterSearchResult", { twitterUser: profile});
   });
 
