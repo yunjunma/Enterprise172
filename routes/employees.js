@@ -7,6 +7,7 @@ router.get('/', function(req, res, next) {
 
   connection.query('SELECT * FROM employees limit 100', function (err, rows){
     if (err) throw err;
+    console.log(rows);
     res.render('employees', { title: 'Express', employees:rows });
 
   })
