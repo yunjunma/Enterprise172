@@ -15,6 +15,7 @@ var departmentsRouter = require("./routes/departments");
 var employeesRouter = require("./routes/employees");
 var dashboardRouter = require("./routes/dashboard");
 var twitterRouter = require("./routes/twitter");
+var employeeRouter = require("./routes/employee");
 
 const OIDC_BASE_URI = `https://openid-connect.onelogin.com/oidc`;
 
@@ -141,6 +142,7 @@ app.use("/departments", checkAuthentication, departmentsRouter);
 app.use("/employees", checkAuthentication, employeesRouter);
 app.use("/dashboard", checkAuthentication, dashboardRouter);
 app.use("/twitter", checkAuthentication, twitterRouter);
+app.use("/employee", checkAuthentication, employeeRouter);
 
 // Initiates an authentication request with OneLogin
 // The user will be redirect to OneLogin and once authenticated
@@ -193,6 +195,7 @@ app.use("/departments", departmentsRouter);
 app.use("/employees", employeesRouter);
 app.use("/dashboard", dashboardRouter);
 app.use("/twitter", twitterRouter);
+app.use("/employee", employeeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
