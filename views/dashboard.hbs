@@ -7,13 +7,13 @@
     </div>
 </div>
 
-<div class="row">
+{{!-- <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">Number of Titles</th>
+      <th scope="col">Number of Job Titles</th>
       <th scope="col">Number of Employees</th>
       <th scope="col">Total Amount of Salaries</th>
       <th scope="col">Number of Departments</th>
@@ -41,4 +41,66 @@
   </tbody>
 </table>
     </div>
-</div>
+</div> --}}
+
+   <center><h2>Information</h2></center> 
+        
+        <table>
+          <tr>
+            <th>Description</th>
+            <th>Measurements</th>
+          </tr>
+
+          <tr>
+            <td>Number of Job Titles</td>
+            <td>{{this.rows}}</td>
+          </tr>
+
+          <tr>
+            <td>Number of employees</td>
+            <td>{{this.rows2}}</td>
+          </tr>
+
+          <tr>
+            <td>Total amount of salary</td>
+            <td>{{this.rows3}}</td>
+          </tr>
+
+          <tr>
+            <td>Number of Departments in the company</td>
+            <td>{{this.rows4}}</td>
+          </tr>
+</table>
+
+        <table>
+                <center><h2>Employees Hired Per Year</h2></center> 
+
+                <tr>
+                  <th>Year</th>
+                  <th>Employees</th>
+                </tr>
+                
+                <tr>
+                  <td>2014</td>
+                  <td>{{this.rows5}}</td>
+                </tr>
+                <tr>
+                  <td>2015</td>
+                  <td>{{this.rows6}}</td>
+                </tr>
+      
+                <tr>
+                      <td>2016</td>
+                      <td>{{this.rows7}}</td>
+               </tr>
+               <tr>
+                      <td>2017</td>
+                      <td>{{this.rows8}}</td>
+               </tr>
+               <tr>
+                      <td>2018</td>
+                      <td>{{this.rows9}}</td>
+               </tr>
+              </table>
+        
+</body>
