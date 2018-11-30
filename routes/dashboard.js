@@ -12,12 +12,24 @@ router.get('/', function (req, res) {
     var query2 = "SELECT COUNT(emp_no) as employee FROM employees";
     var query3 = "SELECT SUM(salary) as money FROM salaries";
     var query4 = "SELECT COUNT(dept_name) as department FROM departments";
-    var query5 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2014";
-    var query6 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2015";
-    var query7 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2016";
-    var query8 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2017";
-    var query9 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2018";
-    var query10 = "SELECT title, MIN(age), MAX(age) FROM User, Loan where User.uID = Loan.uID group by title;"; // Not sure which query this is for so I will just leave this as is
+    var query5 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1985";
+    var query6 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1986";
+    var query7 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1987";
+    var query8 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1988";
+    var query9 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1989";
+    var query10 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1990";
+    var query11 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1991";
+    var query12 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1992";
+    var query13 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1993";
+    var query14 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1994";
+    var query15 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1995";
+    var query16 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1996";
+    var query17 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1997";
+    var query18 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1998";
+    var query19 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1999";
+    //var query20 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) > 2000";
+    //var query10 = "SELECT title, MIN(age), MAX(age) FROM User, Loan where User.uID = Loan.uID group by title;"; 
+    // Not sure which query this is for so I will just leave this as is
     
     //var query10 = "SELECT YEAR(hire_date) as year FROM employees";
 
@@ -48,6 +60,17 @@ router.get('/', function (req, res) {
         function(callback) { connection.query(query7, callback) },
         function(callback) { connection.query(query8, callback) },
         function(callback) { connection.query(query9, callback) },
+        function(callback) { connection.query(query10, callback) },
+        function(callback) { connection.query(query11, callback) },
+        function(callback) { connection.query(query12, callback) }, 
+        function(callback) { connection.query(query13, callback) },
+        function(callback) { connection.query(query14, callback) },
+        function(callback) { connection.query(query15, callback) },
+        function(callback) { connection.query(query16, callback) },
+        function(callback) { connection.query(query17, callback) },
+        function(callback) { connection.query(query18, callback) },
+        function(callback) { connection.query(query19, callback) },
+        //function(callback) { connection.query(query20, callback) },
         //function(callback) { connection.query(query10, callback) },
       ], function(err, results) {
         //console.log(JSON.stringify(results[9][0][0]["year"]));
@@ -60,6 +83,17 @@ router.get('/', function (req, res) {
                                 rows7 : JSON.stringify(results[6][0][0]["employee"]), 
                                 rows8 : JSON.stringify(results[7][0][0]["employee"]), 
                                 rows9 : JSON.stringify(results[8][0][0]["employee"]), 
+                                rows10 : JSON.stringify(results[9][0][0]["employee"]), 
+                                rows11 : JSON.stringify(results[10][0][0]["employee"]), 
+                                rows12 : JSON.stringify(results[11][0][0]["employee"]), 
+                                rows13 : JSON.stringify(results[12][0][0]["employee"]), 
+                                rows14 : JSON.stringify(results[13][0][0]["employee"]), 
+                                rows15 : JSON.stringify(results[14][0][0]["employee"]), 
+                                rows16 : JSON.stringify(results[15][0][0]["employee"]), 
+                                rows17 : JSON.stringify(results[16][0][0]["employee"]), 
+                                rows18 : JSON.stringify(results[17][0][0]["employee"]), 
+                                rows19 : JSON.stringify(results[18][0][0]["employee"]), 
+                                //rows20 : JSON.stringify(results[19][0][0]["employee"]), 
                                 //rows10 : JSON.stringify(results[9][0][0][""]) 
                                 // Will leave rows10 out if query10 is not needed. 
                             });
