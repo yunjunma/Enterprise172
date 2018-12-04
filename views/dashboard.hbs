@@ -7,6 +7,79 @@
     </div>
 </div>
 
+
+<style>
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 22%;
+    border-radius: 5px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    padding: 2px 16px;
+}
+</style>
+
+<h3>Stat Of the Day</h3>
+
+<div style="display: inline-block;" class="card">
+  <h1 style="text-align: center;
+    padding: 40px;
+    background-color: brown;
+    color: white;
+    margin: 0;">Job Titles</h1>
+    <div style="    background-color: #f7f7f7;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;">{{this.rows}}</div> 
+</div>
+
+<div style="display: inline-block;" class="card">
+  <h1 style="text-align: center;
+    padding: 40px;
+    background-color: brown;
+    color: white;
+    margin: 0;">Employees</h1>
+    <div style="    background-color: #f7f7f7;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;">{{this.rows2}}K</div> 
+</div>
+
+<div style="display: inline-block;" class="card">
+  <h1 style="text-align: center;
+    padding: 40px;
+    background-color: brown;
+    color: white;
+    margin: 0;">Salary</h1>
+    <div style="    background-color: #f7f7f7;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;">{{this.rows3}} Billion</div> 
+</div>
+
+<div style="display: inline-block;" class="card">
+  <h1 style="text-align: center;
+    padding: 40px;
+    background-color: brown;
+    color: white;
+    margin: 0;">Departments</h1>
+    <div style="    background-color: #f7f7f7;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;">{{this.rows4}}</div> 
+</div>
+
+
 {{!-- <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
@@ -43,7 +116,7 @@
     </div>
 </div> --}}
 
-   <center><h3>Information</h3></center> 
+   {{!-- <center><h3>Information</h3></center> 
         
         <table>
           <tr>
@@ -70,7 +143,7 @@
             <td>Number of Departments in the company</td>
             <td>{{this.rows4}}</td>
           </tr>
-</table>
+</table> --}}
 
         <table>
                 <center><h3>Employees Hired Throughout The Years</h3></center> 
