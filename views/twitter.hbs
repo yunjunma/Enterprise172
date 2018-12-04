@@ -1,25 +1,68 @@
-<h1>Twitter</h1>
+<style>
+    input:focus {
+    outline:none;
+}
+
+.search {
+    font-size: 16px;
+    background-color: #38A1F3;
+    color: white;
+    border-radius: 5px;
+    padding: 12px;
+    display: inline-block;
+    transition: 0.3s
+    }
+
+.search:hover
+{
+    background-color: #2e85c9;
+}
+</style>
+
+<h1 style="background: #38A1F3;
+    color: white;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;">
+    <i class="fa fa-twitter"></i>
+    Twitter
+</h1>
 
 {{!-- Search function --}}
 <div>
-    <h2>Search</h2>
     <form action="/twitter/searchResult" method="POST">
-        <label>Search User:</label><br />
-        <input type="text" name="username" /><br />
-        <input type="submit" name="submit" value="Search" />
+        <div style="display: flex;">
+            <input style="width: 20%;
+                font-size: 18px;
+                border-radius: 10px;
+                background-color: #f7f7f7;
+                padding: 8px;
+                display: inline-block;
+                margin-right: 10px;"
+                type="text" name="username" placeholder="Search User..." /><br />
+            <button class="search" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        {{!-- <input type="submit" name="submit" value="Search" /> --}}
 
     </form>
 </div>
 
 {{!-- Show list of trends --}}
 <div>
-    <h2>Twitter Trends</h2>
-    <p>
+    <h2 style="color: gray;
+    border-left: 10px solid #38A1F3;
+    text-align: left;
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 20px;">
+        # Trending
+    </h2>
+    {{!-- <p>
         You probably want to follow these trends on Twitter...:
-    </p>
+    </p> --}}
     {{!-- display twitter trends --}}
     {{#each trending}}
-    <a href="{{this.url}}">
+    <a style="font-size: 24px;" href="{{this.url}}">
         {{this.name}}
     </a>
     <br />
@@ -29,6 +72,15 @@
 <br /><br />
 
 <div>
+    <h2 style="color: gray;
+    border-left: 10px solid #38A1F3;
+    text-align: left;
+    font-size: 32px;
+    font-weight: bold;
+    padding-left: 20px;">
+        Timeline
+    </h2>
+
     <div>
         <a href="https://twitter.com/PrtyEnterprise?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow
             @PrtyEnterprise</a>
@@ -38,7 +90,7 @@
 
     {{!-- display twitter timeline --}}
     {{!-- Show timeline with given user --}}
-    <a class="twitter-timeline" data-width="500" href="https://twitter.com/PrtyEnterprise?ref_src=twsrc%5Etfw">Tweets
+    <a class="twitter-timeline" data-width="800" href="https://twitter.com/PrtyEnterprise?ref_src=twsrc%5Etfw">Tweets
         by PrtyEnterprise</a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
