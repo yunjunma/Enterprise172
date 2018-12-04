@@ -1,12 +1,12 @@
 <style>
-input:focus 
+    input:focus 
 {
     outline:none;
 }
 
 input[type="text"]
 {
-    width: 20%;
+    width: 100%;
     font-size: 18px;
     border-radius: 10px;
     background-color: #f7f7f7;
@@ -41,23 +41,29 @@ button:hover
                 First Name: <input type="text" name="s_firstname" value="{{s_firstname}}"><br>
                 Last Name: <input type="text" name="s_lastname" value="{{s_lastname}}"><br>
                 <input type="submit" value="search"> --}}
-                <div style="display: flex;">
+                {{!-- <div style="display: flex;">
                     <input style="" type="text" name="s_firstname" placeholder="Search by First Name..." value="{{s_firstname}}" /><br />
                 </div>
                 <div style="display: flex;">
                     <input type="text" name="s_lastname" placeholder="Search by Last Name..." value="{{s_lastname}}" /><br />
                     <button class="search" type="submit">
                         <i class="fa fa-search"></i></button>
+                </div> --}}
+                <div style="display: flex;">
+                    <input style="" type="text" name="s_searchName" placeholder="Search by Name..." value="{{s_searchName}}" /><br />
+                    <button class="search" type="submit">
+                        <i class="fa fa-search"></i></button>
                 </div>
-            </div>
+                {{!--
+            </div> --}}
         </form>
         (For instance: Margareta Markovitch)
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
+    <div class="col-md-1"></div>
+    <div class="col-md-12">
         <table class="table table-hover">
             <thead>
                 <tr>

@@ -1,30 +1,81 @@
-<div class="container">  
-    <div class="row">
-        <h2>Departments information</h2>
-        <div class="col-md-2"></div>
-        <div class="col-md-8"></div>
+<div class="container">
+  <div class="row">
+    <h2>Departments information</h2>
+    <div class="col-md-2"></div>
+    <div class="col-md-8"></div>
 
-    </div>
+  </div>
 </div>
 
-<div class="row">
+<style>
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 33%;
+    border-radius: 5px;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .container {
+    padding: 2px 16px;
+  }
+</style>
+
+<div style="text-align: center;">
+  {{#each departments}}
+  {{!-- <tr>
+    <th scope="row">{{this.dept_no}}</th>
+    <td>{{this.dept_name}}</td>
+  </tr> --}}
+  <div style="display: inline-block;" class="card">
+    <h1 style="text-align: center;
+    padding: 40px;
+    background-color: #c63535;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;">{{this.dept_name}}</h1>
+    <div style="background-color: #f7f7f7;">
+      <h3 style="text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;">{{this.employees_count}}</h3>
+      <span style="color: #919191">Employees</span>
+    </div>
+  </div>
+
+  {{/each}}
+
+
+
+
+
+
+  {{!-- <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Department Number</th>
-      <th scope="col">Department name</th>
-    </tr>
-  </thead>
-  <tbody>
-      {{#each departments}}
-    <tr>
-      <th scope="row">{{this.dept_no}}</th>
-      <td>{{this.dept_name}}</td>
-    </tr>
-    {{/each}}
-  </tbody>
-</table>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Department Number</th>
+            <th scope="col">Department name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each departments}}
+          <tr>
+            <th scope="row">{{this.dept_no}}</th>
+            <td>{{this.dept_name}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </div>
-</div>
+  </div> --}}
