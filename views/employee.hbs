@@ -1,21 +1,60 @@
-<div class="container">  
+<style>
+h2
+{
+    font-size:36px;
+    font-weight:bold;
+}
+
+input[type=text] 
+{
+    font-size:20px;
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: #c63535;
+    font-size:20px;
+    width: 60%;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s
+}
+
+input[type=submit]:hover 
+{
+    background-color: #912525;
+}
+
+</style>
+
+<div class="container">
     <div class="row">
         <h2>Empolyee information</h2>
         <form action="/employee" method="post">
-            <div class="form-group">
-                First Name: <input type="text" name="s_firstname" value="{{s_firstname}}"><br>
-                Last Name: <input type="text" name="s_lastname" value="{{s_lastname}}"><br>
-                Gender: <input type="text" name="gender" value="{{gender}}">   (M/F)<br>
-                Birthday: <input type="text" name="birthday" value="{{birthday}}"><br>
-                Employee number: <input type="text" name="e_id" value="{{e_id}}"><br>
-                Title: <input type="text" name="title" value="{{title}}"><br>
-                Hire Date: <input type="text" name="hire_date" value="{{hire_date}}"><br>
-                End Date: <input type="text" name="end_date" value="{{end_date}}"><br>
-                Salary: <input type="text" name="salary" value="{{salary}}"><br>
-                
+            <div style="text-align:center;" class="form-group">
+                <input placeholder="First Name" type="text" name="s_firstname" value="{{s_firstname}}"><br>
+                <input placeholder="Last Name" type="text" name="s_lastname" value="{{s_lastname}}"><br>
+                <input placeholder="Gender (M/F)" type="text" name="gender" value="{{gender}}"><br>
+                <input placeholder="Birthday" type="text" name="birthday" value="{{birthday}}"><br>
+                <input placeholder="Employee number" type="text" name="e_id" value="{{e_id}}"><br>
+                <input placeholder="Title" type="text" name="title" value="{{title}}"><br>
+                <input placeholder="Hire Date" type="text" name="hire_date" value="{{hire_date}}"><br>
+                <input placeholder="End Date" type="text" name="end_date" value="{{end_date}}"><br>
+                <input placeholder="Salary" type="text" name="salary" value="{{salary}}"><br>
                 <input type="submit" value="Save">
             </div>
         </form>
-        
+
     </div>
 </div>
