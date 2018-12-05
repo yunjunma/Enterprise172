@@ -5,7 +5,7 @@ var connection = require('../config/connection')
 router.post('/', function (req, res) {
 //   var lastname = req.body.s_lastname;
   var searchName = req.body.s_searchName;
-  var sql = 'SELECT *,DATE_FORMAT(birth_date, "%d/%m/%Y") AS birthday, DATE_FORMAT(hire_date, "%d/%m/%Y" ) AS hiredate FROM employees, titles';
+  var sql = 'SELECT *,DATE_FORMAT(birth_date, "%m/%d/%Y") AS birthday, DATE_FORMAT(hire_date, "%m/%d/%Y" ) AS hiredate FROM employees, titles';
 
 //   if (lastname) {
 //       sql += " and last_name='" + lastname + "' ";
@@ -31,7 +31,7 @@ router.post('/', function (req, res) {
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  connection.query('SELECT *,DATE_FORMAT(birth_date,"%d/%m/%Y") AS birthday, DATE_FORMAT(hire_date,"%d/%m/%Y") AS hiredate FROM employees, titles where employees.emp_no = titles.emp_no limit 100', function (err, rows){
+  connection.query('SELECT *,DATE_FORMAT(birth_date,"%m/%d/%Y") AS birthday, DATE_FORMAT(hire_date,"%m/%d/%Y") AS hiredate FROM employees, titles where employees.emp_no = titles.emp_no limit 100', function (err, rows){
     if (err) throw err;
     // console.log(rows);
     res.render('employees', { title: 'Express', employees:rows });
