@@ -27,6 +27,25 @@ router.get('/', function (req, res) {
     var query17 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1997";
     var query18 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1998";
     var query19 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 1999";
+    var query20 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2000";
+    var query22 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2001";
+    var query23 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2002";
+    var query24 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2003";
+    var query25 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2004";
+    var query21 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2005";
+    var query26 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2006";
+    var query27 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2007";
+    var query28 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2008";
+    var query29 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2009";
+    var query30 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2010";
+    var query31 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2011";
+    var query32 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2012";
+    var query33 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2013";
+    var query34 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2014";
+    var query35 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2015";
+    var query36 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2016";
+    var query37 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2017";
+    var query38 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) = 2018";
     //var query20 = "SELECT COUNT(emp_no) as employee FROM employees where YEAR(hire_date) > 2000";
     //var query10 = "SELECT title, MIN(age), MAX(age) FROM User, Loan where User.uID = Loan.uID group by title;"; 
     // Not sure which query this is for so I will just leave this as is
@@ -70,6 +89,25 @@ router.get('/', function (req, res) {
         function(callback) { connection.query(query17, callback) },
         function(callback) { connection.query(query18, callback) },
         function(callback) { connection.query(query19, callback) },
+        function(callback) { connection.query(query20, callback) },
+        function(callback) { connection.query(query21, callback) },
+        function(callback) { connection.query(query22, callback) }, 
+        function(callback) { connection.query(query23, callback) },
+        function(callback) { connection.query(query24, callback) },
+        function(callback) { connection.query(query25, callback) },
+        function(callback) { connection.query(query26, callback) },
+        function(callback) { connection.query(query27, callback) },
+        function(callback) { connection.query(query28, callback) },
+        function(callback) { connection.query(query29, callback) },
+        function(callback) { connection.query(query30, callback) },
+        function(callback) { connection.query(query31, callback) },
+        function(callback) { connection.query(query32, callback) }, 
+        function(callback) { connection.query(query33, callback) },
+        function(callback) { connection.query(query34, callback) },
+        function(callback) { connection.query(query35, callback) },
+        function(callback) { connection.query(query36, callback) },
+        function(callback) { connection.query(query37, callback) },
+        function(callback) { connection.query(query38, callback) },
         //function(callback) { connection.query(query20, callback) },
         //function(callback) { connection.query(query10, callback) },
       ], function(err, results) {
@@ -92,7 +130,26 @@ router.get('/', function (req, res) {
                                 rows16 : JSON.stringify(results[15][0][0]["employee"]), 
                                 rows17 : JSON.stringify(results[16][0][0]["employee"]), 
                                 rows18 : JSON.stringify(results[17][0][0]["employee"]), 
-                                rows19 : JSON.stringify(results[18][0][0]["employee"]), 
+                                rows19 : JSON.stringify(results[18][0][0]["employee"]),
+                                rows20 : JSON.stringify(results[19][0][0]["employee"]), 
+                                rows21 : JSON.stringify(results[20][0][0]["employee"]), 
+                                rows22 : JSON.stringify(results[21][0][0]["employee"]), 
+                                rows23 : JSON.stringify(results[22][0][0]["employee"]), 
+                                rows24 : JSON.stringify(results[23][0][0]["employee"]), 
+                                rows25 : JSON.stringify(results[24][0][0]["employee"]), 
+                                rows26 : JSON.stringify(results[25][0][0]["employee"]), 
+                                rows27 : JSON.stringify(results[26][0][0]["employee"]), 
+                                rows28 : JSON.stringify(results[27][0][0]["employee"]), 
+                                rows29 : JSON.stringify(results[28][0][0]["employee"]), 
+                                rows30 : JSON.stringify(results[29][0][0]["employee"]), 
+                                rows31 : JSON.stringify(results[30][0][0]["employee"]), 
+                                rows32 : JSON.stringify(results[31][0][0]["employee"]), 
+                                rows33 : JSON.stringify(results[32][0][0]["employee"]), 
+                                rows34 : JSON.stringify(results[33][0][0]["employee"]), 
+                                rows35 : JSON.stringify(results[34][0][0]["employee"]), 
+                                rows36 : JSON.stringify(results[35][0][0]["employee"]), 
+                                rows37 : JSON.stringify(results[36][0][0]["employee"]), 
+                                rows38 : JSON.stringify(results[37][0][0]["employee"]), 
                                 //rows20 : JSON.stringify(results[19][0][0]["employee"]), 
                                 //rows10 : JSON.stringify(results[9][0][0][""]) 
                                 // Will leave rows10 out if query10 is not needed. 
