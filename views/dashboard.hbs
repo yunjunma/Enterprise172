@@ -1,75 +1,268 @@
-<div class="container">  
-    <div class="row">
-        <h2>Dashboard</h2>
-        <div class="col-md-2"></div>
-        <div class="col-md-8"></div>
+<div class="container">
+  <div class="row">
+    <h2>Dashboard</h2>
+    <div class="col-md-2"></div>
+    <div class="col-md-8"></div>
 
+  </div>
+</div>
+
+
+<style>
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 22%;
+    border-radius: 5px;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .container {
+    padding: 2px 16px;
+  }
+</style>
+
+<div style="text-align: center;">
+  <h3>Stat Of the Day</h3>
+
+  <div style="display: inline-block;" class="card">
+    <h1 style="text-align: center;
+    padding: 40px;
+    background-color: #c63535;
+    color: white;
+    margin: 0;">Job
+      Titles</h1>
+    <div style="background-color: #f7f7f7;">
+      <div style="
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;">{{this.rows}}</div>
+      <span style="
+    color: #919191;
+    font-size: 16px;
+    font-weight: 400;">Positions</span>
+    </div>
+  </div>
+
+  <div style="display: inline-block;" class="card">
+    <h1 style="text-align: center;
+    padding: 40px;
+    background-color: #c63535;
+    color: white;
+    margin: 0;">Employees</h1>
+    <div style="background-color: #f7f7f7;">
+      <div style="    background-color: #f7f7f7;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;">{{this.rows2}}K</div>
+      <span style="
+    color: #919191;
+    font-size: 16px;
+    font-weight: 400;">Employees</span>
+    </div>
+  </div>
+
+  <div style="display: inline-block;" class="card">
+    <h1 style="text-align: center;
+    padding: 40px;
+    background-color: #c63535;
+    color: white;
+    margin: 0;">Salary</h1>
+    <div style="background-color: #f7f7f7;">
+      <div style="    background-color: #f7f7f7;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;">{{this.rows3}} Billion</div>
+      <span style="
+    color: #919191;
+    font-size: 16px;
+    font-weight: 400;">Dollars</span>
+    </div>
+  </div>
+
+  <div style="display: inline-block;" class="card">
+    <h1 style="text-align: center;
+    padding: 40px;
+    background-color: #c63535;
+    color: white;
+    margin: 0;">Departments</h1>
+        <div style="background-color: #f7f7f7;">
+      <div style="    background-color: #f7f7f7;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;">{{this.rows4}}</div>
+      <span style="
+    color: #919191;
+    font-size: 16px;
+    font-weight: 400;">Units</span>
     </div>
 </div>
 
+
 {{!-- <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Number of Job Titles</th>
-      <th scope="col">Number of Employees</th>
-      <th scope="col">Total Amount of Salaries</th>
-      <th scope="col">Number of Departments</th>
-      <th scope="col">Number of Employees Hired on 2014</th>
-      <th scope="col">Number of Employees Hired on 2015</th>
-      <th scope="col">Number of Employees Hired on 2016</th>
-      <th scope="col">Number of Employees Hired on 2017</th>
-      <th scope="col">Number of Employees Hired on 2018</th>
-      <th scope="col">Forgot what data this query is for</th>
-    </tr>
-  </thead>
-  <tbody>
-      {{dashboard}}
-    <tr>
-      <th scope="row">{{this.rows}}</th>
-      <td>{{this.rows2}}</td>
-      <td>{{this.rows3}}</td>
-      <td>{{this.rows4}}</td>
-      <td>{{this.rows5}}</td>
-      <td>{{this.rows6}}</td>
-      <td>{{this.rows7}}</td>
-      <td>{{this.rows8}}</td>
-      <td>{{this.rows9}}</td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Number of Job Titles</th>
+          <th scope="col">Number of Employees</th>
+          <th scope="col">Total Amount of Salaries</th>
+          <th scope="col">Number of Departments</th>
+          <th scope="col">Number of Employees Hired on 2014</th>
+          <th scope="col">Number of Employees Hired on 2015</th>
+          <th scope="col">Number of Employees Hired on 2016</th>
+          <th scope="col">Number of Employees Hired on 2017</th>
+          <th scope="col">Number of Employees Hired on 2018</th>
+          <th scope="col">Forgot what data this query is for</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{dashboard}}
+        <tr>
+          <th scope="row">{{this.rows}}</th>
+          <td>{{this.rows2}}</td>
+          <td>{{this.rows3}}</td>
+          <td>{{this.rows4}}</td>
+          <td>{{this.rows5}}</td>
+          <td>{{this.rows6}}</td>
+          <td>{{this.rows7}}</td>
+          <td>{{this.rows8}}</td>
+          <td>{{this.rows9}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div> --}}
 
-   <center><h2>Information</h2></center> 
-        
-        <table>
-          <tr>
-            <th>Description</th>
-            <th>Measurements</th>
-          </tr>
+{{!-- <center>
+  <h3>Information</h3>
+</center>
 
-          <tr>
-            <td>Number of Job Titles</td>
-            <td>{{this.rows}}</td>
-          </tr>
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Measurements</th>
+  </tr>
 
-          <tr>
-            <td>Number of employees</td>
-            <td>{{this.rows2}}</td>
-          </tr>
+  <tr>
+    <td>Number of Job Titles</td>
+    <td>{{this.rows}}</td>
+  </tr>
 
-          <tr>
-            <td>Total amount of salary</td>
-            <td>{{this.rows3}}</td>
-          </tr>
+  <tr>
+    <td>Number of employees</td>
+    <td>{{this.rows2}}</td>
+  </tr>
 
-          <tr>
-            <td>Number of Departments in the company</td>
-            <td>{{this.rows4}}</td>
-          </tr>
+  <tr>
+    <td>Total amount of salary</td>
+    <td>{{this.rows3}}</td>
+  </tr>
+
+  <tr>
+    <td>Number of Departments in the company</td>
+    <td>{{this.rows4}}</td>
+  </tr>
+</table> --}}
+
+<table>
+  <center>
+    <h3>Employees Hired Throughout The Years</h3>
+  </center>
+
+  <tr>
+    <th>Year</th>
+    <th>Employees</th>
+  </tr>
+
+  <tr>
+    <td>1985</td>
+    <td>{{this.rows5}}</td>
+  </tr>
+
+  <tr>
+    <td>1986</td>
+    <td>{{this.rows6}}</td>
+  </tr>
+
+  <tr>
+    <td>1987</td>
+    <td>{{this.rows7}}</td>
+  </tr>
+
+  <tr>
+    <td>1988</td>
+    <td>{{this.rows8}}</td>
+  </tr>
+
+  <tr>
+    <td>1989</td>
+    <td>{{this.rows9}}</td>
+  </tr>
+
+  <tr>
+    <td>1990</td>
+    <td>{{this.rows10}}</td>
+  </tr>
+
+  <tr>
+    <td>1991</td>
+    <td>{{this.rows11}}</td>
+  </tr>
+
+  <tr>
+    <td>1992</td>
+    <td>{{this.rows12}}</td>
+  </tr>
+
+  <tr>
+    <td>1993</td>
+    <td>{{this.rows13}}</td>
+  </tr>
+
+  <tr>
+    <td>1994</td>
+    <td>{{this.rows14}}</td>
+  </tr>
+
+  <tr>
+    <td>1995</td>
+    <td>{{this.rows15}}</td>
+  </tr>
+
+  <tr>
+    <td>1996</td>
+    <td>{{this.rows16}}</td>
+  </tr>
+
+  <tr>
+    <td>1997</td>
+    <td>{{this.rows17}}</td>
+  </tr>
+
+  <tr>
+    <td>1998</td>
+    <td>{{this.rows18}}</td>
+  </tr>
+
+  <tr>
+    <td>1999</td>
+    <td>{{this.rows19}}</td>
+  </tr>
+
+  {{!-- <tr>
+    <td>After 2000</td>
+    <td>{{this.rows20}}</td>
+  </tr>
+  --}}
 </table>
 
         <table>
@@ -257,4 +450,5 @@
 --}}              
               </table>
         
+</body>
 </body>

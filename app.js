@@ -34,10 +34,10 @@ var app = express();
 
 // start http and https server
 // mainly used https for security purpose
-var httpServer = http.createServer(app);
+// var httpServer = http.createServer(app);
 var httpsServer = https.createServer(certOptions, app);
 
-httpServer.listen(8080);
+// httpServer.listen(8080);
 httpsServer.listen(8443);
 
 // connect to oneLogin
@@ -124,7 +124,6 @@ app.use(function(req, res, next) {
     authenticated: req.isAuthenticated(),
     loginUser: req.user
   };
-    console.log(req.user.name.givenName)
     
     // show the object in req.user
     // console.dir(req.user.name.givenName, { depth: null });

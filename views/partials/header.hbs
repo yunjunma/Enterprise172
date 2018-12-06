@@ -1,7 +1,29 @@
-<nav class="navbar navbar-default">
+<style>
+    .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover
+    {
+        background-color: #912525;
+    }
+    .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover
+    {
+        background-color: #912525;
+    }
+
+    .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover
+    {
+        background-color: #912525;
+    }
+    a
+    {
+        transition: 0.5s;
+    }
+</style>
+
+<nav style="background-color: #c63535;" class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <img height="42" width="42" src="/images/logo.png"/>
+            <a href="/">
+                <img height="42" width="42" src="/images/logo.png">
+            </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
                 aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -9,7 +31,6 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Enterprise</a>
         </div>
 
 
@@ -17,33 +38,33 @@
             {{!-- if the user logs in, show them all the tabs, else don't show anything --}}
             {{#if user.authenticated}}
             <ul class="nav navbar-nav">
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/departments">Departments</a></li>
-                <li><a href="/employees">Employees</a></li>
-                <li><a href="/managers">Managers</a></li>
-                <li><a href="/employee">Add</a></li>
-                <li><a href="/twitter">Twitter</a></li>
+                <li><a style="color:white;" href="/dashboard">Dashboard</a></li>
+                <li><a style="color:white;" href="/departments">Departments</a></li>
+                <li><a style="color:white;" href="/employees">Employees</a></li>
+                <li><a style="color:white;" href="/managers">Managers</a></li>
+                <li><a style="color:white;" href="/employee">Add</a></li>
+                <li><a style="color:white;" href="/twitter">Twitter</a></li>
             </ul>
             {{/if}}
             <ul class="nav navbar-nav navbar-right">
                 {{!-- if the user logs in, the user has options: profile, onelogin, and logout --}}
                 {{#if user.authenticated}}
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    <a style="color:white;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                         aria-expanded="false"><i class="fa fa-user" aria-hidden="true"></i>
                         {{!-- show user's name once they login --}}
                         {{user.loginUser.displayName}} <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/users/profile">Profile </a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="https:prty.onelogin.com" target="_blank">OneLogin </a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="/logout">Logout</a></li>
+                    <ul style="background-color: #c63535;" class="dropdown-menu">
+                        <li><a style="color:white;" href="/users/profile">Profile </a></li>
+                        <li style="color:white;" role="separator" class="divider"></li>
+                        <li><a style="color:white;" href="https:prty.onelogin.com" target="_blank">OneLogin </a></li>
+                        <li style="color:white;" role="separator" class="divider"></li>
+                        <li><a style="color:white;" href="/logout">Logout</a></li>
                     </ul>
                 </li>
                 {{!-- if the user does not login, the only option the user will have is to login --}}
                 {{else}}
-                <li><a href="/login">Login</a></li>
+                <li><a style="color:white;" href="/login">Login</a></li>
                 {{/if}}
             </ul>
         </div><!-- /.navbar-collapse -->

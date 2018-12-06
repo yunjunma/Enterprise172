@@ -12,6 +12,7 @@ router.post('/', function (req, res) {
   var salary = req.body.salary;
   var end_date = req.body.end_date;
   var gender = req.body.gender;
+  var dept_no = req.body.dept_no;
 
   var e_sql = "insert into employees "
     e_sql += "(emp_no, birth_date, first_name, last_name, gender,hire_date) "
@@ -27,6 +28,12 @@ router.post('/', function (req, res) {
     s_sql += "(emp_no, salary, from_date, to_date) "
     s_sql += "values "
     s_sql += "(" + e_id + ", " + salary + ", '" + hire_date +"', '" + end_date + "') "
+
+    // waiting
+//   var s_sql = "insert into dept_emp "
+//     s_sql += "(emp_no, dept_no, from_date, to_date) "
+//     s_sql += "values "
+//     s_sql += "(" + e_id + ", " + dept_no + ", '" + hire_date +"', '" + end_date + "') "
 
   connection.query(e_sql, function (err, result) {
       if (err) {

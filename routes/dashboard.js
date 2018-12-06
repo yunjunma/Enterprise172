@@ -6,6 +6,7 @@ var async      = require('async');
 var credentials = {connectionLimit: 10};
 
 
+
 router.get('/', function (req, res) {
     var pool = mysql.createPool(credentials);
     var query1 = "SELECT COUNT(DISTINCT title) as title from titles";
@@ -113,8 +114,8 @@ router.get('/', function (req, res) {
       ], function(err, results) {
         //console.log(JSON.stringify(results[9][0][0]["year"]));
         res.render('dashboard', { rows : JSON.stringify(results[0][0][0]["title"]), 
-                                rows2 : JSON.stringify(results[1][0][0]["employee"]), 
-                                rows3 : JSON.stringify(results[2][0][0]["money"]), 
+                                rows2 : Math.floor(JSON.stringify(results[1][0][0]["employee"] / 1000)), 
+                                rows3 : Math.floor(JSON.stringify(results[2][0][0]["money"] / 1000000000)), 
                                 rows4 : JSON.stringify(results[3][0][0]["department"]), 
                                 rows5 : JSON.stringify(results[4][0][0]["employee"]), 
                                 rows6 : JSON.stringify(results[5][0][0]["employee"]), 

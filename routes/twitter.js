@@ -54,26 +54,31 @@ router.get("/", function(req, res, next) {
   // });
 });
 
-router.post("/searchResult", function(req, res){
+router.post("/searchResult", function(req, res) {
   let username = req.body.username;
 
   // to prevent users forgot to search username without "@"
-  if(!username.includes("@"))
-  {
+  if (!username.includes("@")) {
     username = "@" + req.body.username;
   }
-  console.log(req.body.username)
+  console.log(req.body.username);
 
-    client.get("users/show", { screen_name: username }, function(
+  client.get("users/show", { screen_name: username }, function(
     error,
     profile,
     response
   ) {
     // console.log(profile);
-    res.render("twitterSearchResult", { twitterUser: profile});
+    // console.log(profile);
+    userCreatedAt = profile.created_at;
+    timeLength = userCreatedAt.length;
+    userCreatedAt = userCreatedAt.substring(4,7) + ", " + userCreatedAt.substring(timeLength-4,timeLength);
+    console.log(userCreatedAt);
+    res.render("twitterSearchResult", { twitterUser: profile,
+                                        userCreatedAt: userCreatedAt});
   });
 
-  // res.render("twitterSearchResult"); 
+  // res.render("twitterSearchResult");
 });
 
 module.exports = router;

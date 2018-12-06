@@ -1,5 +1,7 @@
-<a href="https://twitter.com/{{twitterUser.screen_name}}">
-    <img src="{{twitterUser.profile_image_url}}" style="border-radius: 100%">
+<a target="_blank" href="https://twitter.com/{{twitterUser.screen_name}}">
+<p>
+    <img width="100px" src="{{twitterUser.profile_image_url}}" style="border-radius: 100%">
+    </p>
 </a>
 
 {{!-- If the searched user does not exists... --}}
@@ -8,8 +10,18 @@
 
 {{!-- if the user exists, show basic info --}}
 {{else}}
-    <p><b>Name:</b> {{twitterUser.name}}</p>
-    <p><b>Username:</b> @{{twitterUser.screen_name}}</p>
-    <p><b>Location:</b> {{twitterUser.location}}</p>
-    <p><b>User Page:</b> <a href="https://twitter.com/{{twitterUser.screen_name}}">User Page</a></p>
+    <p><a target="_blank" href="https://twitter.com/{{twitterUser.screen_name}}" style="font-size: 36px;">{{twitterUser.name}}</a></p>
+    <p style="font-size: 18px;
+        color: gray;"> 
+        @{{twitterUser.screen_name}}
+    <p/>
+    <p style="font-size: 18px;">
+        <i class="fa fa-map-marker"></i> 
+        {{twitterUser.location}}
+    </p>
+
+    <p style="font-size: 18px;">
+       <i class="fa fa-calendar"></i> 
+       Joined in {{userCreatedAt}}
+    </p>
 {{/if}}
